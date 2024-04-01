@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function insertNumberToArray(arr, x, index) {
+        if (index < 0 || index > arr.length) {
+            return arr;
+        }
+        let newarr = new Array(arr.length + 1);
+
+        for (let i = 0; i < arr.length; i++) {
+            if (i < index) {
+                newarr[i] = arr[i];
+            } else {
+                newarr[i + 1] = arr[i];
+            }
+        }
+        newarr[index] = x;
+        return newarr;
+    }
+
+    let arr = [1, 2, 3, 9];
+    let x = 6;
+    let index = 2;
+
+    let newarr = insertNumberToArray(arr, x, index);
+
+    console.log(newarr);
+</script>
+</body>
+</html>

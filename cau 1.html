@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function findAvg(diemThi) {
+        let tong = 0;
+        let soluong = diemThi.length;
+        for (let i = 0; i < diemThi.length; i++) {
+            tong += diemThi[i]
+        }
+        let tb = tong/soluong ;
+        return tb
+    }
+    let diemThi = [3,6,9];
+    let tb = findAvg(diemThi);
+    console.log(tb)
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function isPrime(num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+        if (num % 2 === 0 || num % 3 === 0) return false;
+        let i = 5;
+        while (i * i <= num) {
+            if (num % i === 0 || num % (i + 2) === 0) return false;
+            i += 6;
+        }
+        return true;
+    }
+    function sumOfListPrime(x) {
+        let sum = 0;
+        for (let i = 2; i <= x; i++) {
+            if (isPrime(i)) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+    function calculate() {
+        let inputNumber = document.getElementById("inputNumber").value;
+        let result = sumOfListPrime(parseInt(inputNumber));
+        document.getElementById("result").innerHTML = "Tổng các số nguyên tố từ 0 đến " + inputNumber + " là: " + result;
+    }
+</script>
+
+<input type="number" id="inputNumber" placeholder="Nhập số nguyên x ">
+<button onclick="calculate()">Check</button>
+<p id="result"></p>
+
+</body>
+</html>
